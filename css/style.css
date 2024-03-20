@@ -23,10 +23,33 @@ body{
  img{
     max-width: 100%;
  }
+ h1{
+   margin-bottom: 15px;
+ }
 
  /* navbar */
 
- 
+ .navbar{
+   background: #a1c3ff;
+color: #fff;
+height: 60px;
+ }
+
+.navbar a{
+   color: #fff
+   text-decoration: none;
+   font-size: 18px;
+   font-weight: bold;
+ }
+ .navbar .container{
+   display:flex;
+   justify-content: space-between;
+   align-items: center;
+   height: 95%;
+ }
+ .navbar ul li{
+   margin-left: 20px;
+ }
 
  /* klase */
 
@@ -41,3 +64,26 @@ body{
     margin: 0 auto;
     padding: 0 15px;
  }
+
+.header{
+   background-color: white;
+   color:black;
+   min-height: 400px;
+}
+
+.header h1{
+   font-size: 3rem;
+   font-weight: bold;
+   line-height: 1.2;
+}
+
+.header img{
+   max-width: 200px;
+   max-height: 400px;
+}
+
+.header .container{
+   display:flex;
+   align-items: center;
+   justify-content: space-around;
+}
