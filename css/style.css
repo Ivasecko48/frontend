@@ -47,9 +47,32 @@ height: 60px;
    align-items: center;
    height: 95%;
  }
+ .navbar .main-menu ul{
+   display: flex;
+ }
+
+ .navbar ul li a {
+ padding: 10px 20px;
+ display:block;
+ font-weight: 600;
+ transition: 0.5s;
+ }
+
  .navbar ul li{
    margin-left: 20px;
  }
+
+ .navbar ul li a:hover{
+   color: var(#333);
+ }
+
+.navbar ul li a i {
+   margin-right: 10px;
+}
+
+.navbar ul li:last-child a {
+   margin-left: 10px;
+}
 
  /* klase */
 
@@ -98,4 +121,44 @@ height: 60px;
    margin: 20px 10px;
    box-shadow: 0 3px 5px rgba(red, green, blue, alpha);
    padding: 15px 20px;
+}
+.table .container{
+   display:flex;
+   justify-content: space-between;
+}
+.table table{
+   border-collapse: collapse;
+   width: 30% ;
+   margin: 10px;
+}
+.table th,td{
+   border: 1px solid black;
+   padding: 8px;
+   text-align: center;
+}
+.table th {
+  background-color: #f2f2f2;
+}
+/* botuni */
+
+.btn {
+   display: inline-block;
+   padding: 13px 20px;
+   background: var(blue);
+   color: #333;
+   font-weight: 600;
+   text-decoration: none;
+   border: none;
+   border-radius: 10px;
+   cursor: pointer;
+   transition: 0.5s;
+}
+
+.btn:hover{
+   opacity: 0.8;
+}
+
+.btn-block {
+   display: block;
+   width: 100%;
 }
