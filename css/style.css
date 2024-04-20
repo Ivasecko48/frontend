@@ -27,24 +27,49 @@ body{
    margin-bottom: 15px;
  }
 
+ .color-box {
+   background: #3cca29c7;
+   height: 70px;
+   text-align: center;
+   color: transparent; /* Tekst postaje transparentan */
+   animation: changeColor 1s infinite linear; /* Animacija mijenjanja gradijenta */
+ }
+ 
+ @keyframes changeColor {
+    0% { color: red; } /* Početna boja teksta */
+    25% { color: blue; } /* Boja teksta na 25% vremena */
+    50% { color: green; } /* Boja teksta na 50% vremena */
+    75% { color: yellow; } /* Boja teksta na 75% vremena */
+    100% { color: red; } /* Konačna boja teksta */
+  }
+ 
+h1{
+    font-size: 48px;
+    font-weight:bolder;
+    padding: 10 0;
+ }
  /* navbar */
 
  .navbar{
-   background: #a1c3ff;
+   background: #3cca29c7;
 color: #fff;
-height: 60px;
+height: 70px;
  }
 
+ .navbar .logo{
+position:relative;
+ }
  .navbar a{
    color: #fff;
    text-decoration: none;
    font-size: 18px;
    font-weight: bold;
  }
+
  .navbar .container{
    display:flex;
    justify-content: space-between;
-   align-items: center;
+   align-items:flex-start;
    height: 95%;
  }
  .navbar .main-menu ul{
@@ -59,25 +84,26 @@ height: 60px;
  }
 
  .navbar ul li{
-   margin-left: 20px;
+   margin-left: 4px;
  }
 
  .navbar ul li a:hover{
-   color: var(#333);
+   text-decoration: underline;
+   color: #333;
  }
 
 .navbar ul li a i {
-   margin-right: 10px;
+   margin-right: 6px;
 }
 
 .navbar ul li:last-child a {
-   margin-left: 10px;
+   margin-left: 6px;
 }
 
  /* klase */
 
  .container{
-    max-width: 1100px;
+    max-width: 1240px;
     margin: 0 auto;
     padding: 0 15px;
 
@@ -94,7 +120,7 @@ height: 60px;
    min-height: 400px;
 }
 
-.header h1{
+.header h2{
    font-size: 3rem;
    font-weight: bold;
    line-height: 1.2;
@@ -115,17 +141,26 @@ height: 60px;
    display: flex;
    justify-content: space-between;
 }
-.box{
-   display: grid;
-   grid-template-columns: repeat(6, 400px);
-   gap: 30px;
 
+.card {
+display: inline-block;
+width: 300px;
+margin: 0 4px;
+padding: 20px 16px;
+border: 2px solid transparent;
+}
+
+.card:hover{
+   background-color: rgba(235, 229, 229, 0.63);
+   border-color: #b1abab60;
+   border-radius: 12px;
+}
+
+.card ul{
+   font-family: Arial Narrow, sans-serif , cursive;
+}
    /* specifikacije */
 
-   .card {
-
-   }
-}
 .table .container{
    display:flex;
    justify-content: space-between;
