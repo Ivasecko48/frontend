@@ -148,6 +148,7 @@ width: 300px;
 margin: 0 4px;
 padding: 20px 16px;
 border: 2px solid transparent;
+text-align: center;
 }
 
 .card:hover{
@@ -157,7 +158,11 @@ border: 2px solid transparent;
 }
 
 .card ul{
-   font-family: Arial Narrow, sans-serif , cursive;
+   font-family: 'Bradley Hand', cursive;
+
+}
+.card li{
+   margin-bottom: 1px;
 }
    /* specifikacije */
 
