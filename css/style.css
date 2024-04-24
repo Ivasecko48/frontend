@@ -30,6 +30,7 @@ body{
  .color-box {
    background: #3cca29c7;
    height: 70px;
+   line-height: 0.8;
    text-align: center;
    color: transparent; /* Tekst postaje transparentan */
    animation: changeColor 1s infinite linear; /* Animacija mijenjanja gradijenta */
@@ -44,7 +45,7 @@ body{
   }
  
 h1{
-    font-size: 48px;
+    font-size: 3.6rem;
     font-weight:bolder;
     padding: 10 0;
  }
@@ -101,7 +102,7 @@ position:relative;
 }
 
  /* klase */
-
+ 
  .container{
     max-width: 1240px;
     margin: 0 auto;
@@ -114,24 +115,22 @@ position:relative;
     padding: 0 15px;
  }
 
-.header{
+header{
    background-color: white;
    color:black;
    min-height: 400px;
 }
 
-.header h2{
-   font-size: 3rem;
+header h2{
+   font-size: 2rem;
    font-weight: bold;
    line-height: 1.2;
+   text-align: center;
+   margin-top: 12px;
 }
 
-.header img{
-   max-width: 200px;
-   max-height: 400px;
-}
 
-.header .container{
+header .container{
    display:flex;
    align-items: center;
    justify-content: space-around;
@@ -222,4 +221,8 @@ background-color: rgba(235, 229, 229, 0.445);
 .btn-block {
    display: block;
    width: 100%;
+}
+
+footer p{
+   text-align: end;
 }
