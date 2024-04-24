@@ -198,6 +198,9 @@ background-color: rgba(235, 229, 229, 0.445);
  footer a{
    color: #ccc;
  }
+ footer img{
+   max-width: 100px;
+ }
  footer i{
    font-size: 1.5rem;
    margin-right:10px;
