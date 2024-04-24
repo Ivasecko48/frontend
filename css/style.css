@@ -101,20 +101,7 @@ position:relative;
    margin-left: 6px;
 }
 
- /* klase */
- 
- .container{
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 0 15px;
-
- }
- .container-sm{
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 15px;
- }
-
+/* header */
 header{
    background-color: white;
    color:black;
@@ -176,7 +163,7 @@ background-color: rgba(235, 229, 229, 0.445);
    font-size: 16px;
 }
 
-   /* specifikacije */
+   /* tablice */
 
 .table .container{
    display:flex;
@@ -197,7 +184,56 @@ background-color: rgba(235, 229, 229, 0.445);
 }
 
 
+ /* footer */
 
+ footer{
+   padding: 40px 0;
+ }
+ footer h4{
+   margin-bottom:10px;
+ }
+ footer ul li{
+   line-height:2.5;
+ }
+ footer a{
+   color: #ccc;
+ }
+ footer i{
+   font-size: 1.5rem;
+   margin-right:10px;
+ }
+footer p{
+   text-align: end;
+}
+.footer-purple{
+   background-color: #4c4886ce;
+}
+.footer-grid{
+   display:grid;
+   grid-template-columns: 2fr 1fr 1fr 1fr;
+   gap: 25px;
+   justify-content: center;
+   align-items: center;
+}
+.footer input[type='email']{
+   width: 100%;
+   padding:10px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   margin: 20px 0;
+}
+  /* Utility */
+  .container{
+   max-width: 1240px;
+   margin: 0 auto;
+   padding: 0 15px;
+
+}
+.container-sm{
+   max-width: 800px;
+   margin: 0 auto;
+   padding: 0 15px;
+}
 
 /* botuni */
 
@@ -221,8 +257,4 @@ background-color: rgba(235, 229, 229, 0.445);
 .btn-block {
    display: block;
    width: 100%;
-}
-
-footer p{
-   text-align: end;
 }

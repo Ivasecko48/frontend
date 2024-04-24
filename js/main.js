@@ -162,7 +162,7 @@ function generateTableRows(processorsArray, tableId) {
         row.insertCell().textContent = processor.procName;
         row.insertCell().textContent = processor.coresThreads;
         row.insertCell().textContent = processor.baseBoostGHz;
-        row.insertCell().textContent = `${processor.price} ${processor.currencySign}`;
+        row.insertCell().textContent = `${processor.currencySign}${processor.price}`;
     });
 }
 
@@ -176,10 +176,10 @@ function mergeRowsByColumn(tableId, columnIndex) {
         const currentText = rows[i].cells[columnIndex].textContent;
         
         if (currentText === previousText) {
-            // Ako je trenutni tekst isti kao prethodni, povećajte broj rowspan
+            
             rowspanCount++;
             rows[i - rowspanCount].cells[columnIndex].rowSpan = rowspanCount + 1;
-            rows[i].cells[columnIndex].style.display = 'none'; // Sakrij drugi red koji se spaja
+            rows[i].cells[columnIndex].style.display = 'none'; 
         } else {
             rowspanCount = 0;
             previousText = currentText;
