@@ -135,21 +135,23 @@
     <h2>Odaberite komponente za vaš PC:</h2>
     <form>
         <label for="processor">Procesor(CPU):</label>
-        <select id="processor-type" name="processor-type" onchange="showHideOptions()">
-            <option value="Intel">Intel i9</option>
-            <option value="AMD Ryzen 9">AMD Ryzen 9</option>
-            <option value="Intel i9">Intel i9</option>
-            <option value="AMD Ryzen 9">AMD Ryzen 9</option>
-            <option value="Intel i9">Intel i9</option>
-            <option value="AMD Ryzen 9">AMD Ryzen 9</option>
-            <option value="Intel i9">Intel i9</option>
-            <option value="AMD Ryzen 9">AMD Ryzen 9</option>
+        <select id="processor" name="processor">
+          <optgroup label="Intel">
+              <option value="intel_i9">Intel i9</option>
+              <option value="intel_i7">Intel i7</option>
+              <option value="intel_i5">Intel i5</option>
+          </optgroup>
+          <optgroup label="AMD">
+              <option value="amd_ryzen9">AMD Ryzen 9</option>
+              <option value="amd_ryzen7">AMD Ryzen 7</option>
+              <option value="amd_ryzen5">AMD Ryzen 5</option>
+          </optgroup>
             <!-- Dodajte više opcija prema potrebi -->
         </select>
         
         <label for="motherboard">Matična ploča(MOBO):</label>
         <select id="motherboard" name="motherboard">
-            <option value="ASUS ROG Strix">ASUS ROG Strix</option>
+            <option value="LGA1150">ASUS ROG Strix</option>
             <option value="Gigabyte Aorus">Gigabyte Aorus</option>
             <option value="Intel i9">Intel i9</option>
             <option value="AMD Ryzen 9">AMD Ryzen 9</option>
@@ -159,17 +161,17 @@
         </select>
         
         <label for="gpu">Grafička kartica(GPU):</label>
-        <select id="gpu-options" name="gpu">
-            <option value="Nvidia GeForce RTX 3080">Nvidia GeForce RTX 3080</option>
-            <option value="AMD Radeon RX 6800 XT">AMD Radeon RX 6800 XT</option>
-            <option value="Intel i9">Intel i9</option>
-            <option value="AMD Ryzen 9">AMD Ryzen 9</option>
-            <option value="Intel i9">Intel i9</option>
-            <option value="AMD Ryzen 9">AMD Ryzen 9</option>
-            <option value="Intel i9">Intel i9</option>
-            <option value="AMD Ryzen 9">AMD Ryzen 9</option>
-            <option value="Intel i9">Intel i9</option>
-            <option value="AMD Ryzen 9">AMD Ryzen 9</option>
+        <select id="gpu" name="gpu">
+          <optgroup label="NVIDIA">
+              <option value="intel_i9">Intel i9</option>
+              <option value="intel_i7">Intel i7</option>
+              <option value="intel_i5">Intel i5</option>
+          </optgroup>
+          <optgroup label="AMD">
+              <option value="amd_ryzen9">AMD Ryzen 9</option>
+              <option value="amd_ryzen7">AMD Ryzen 7</option>
+              <option value="amd_ryzen5">AMD Ryzen 5</option>
+          </optgroup>
             <!-- Dodajte više opcija prema potrebi -->
         </select>
         
