@@ -52,7 +52,7 @@ const processors ={
 midCPU:
 [{
     procName: "Core i9 13900k",
-    id: 1,
+    id: 7,
     manufacturer: "Intel",
     coresThreads: "24/32(8+16)",
     baseBoostGHz: "3.0/5.8",
@@ -60,7 +60,7 @@ midCPU:
 },
 {
     procName: "Core i7 13700k",
-    id: 2,
+    id: 8,
     manufacturer: "Intel",
     coresThreads: "16/24(8+8)",
     baseBoostGHz: "3.4/5.4",
@@ -68,7 +68,7 @@ midCPU:
 },
 {
     procName: "Core i5 13600k",
-    id: 3,
+    id: 9,
     manufacturer: "Intel",
     coresThreads: "14/20(6+8)",
     baseBoostGHz: "3.5/5.1",
@@ -76,7 +76,7 @@ midCPU:
 },
 {
     procName: "Ryzen 9 7950X",
-    id: 4,
+    id: 10,
     manufacturer: "AMD",
     coresThreads: "16/32",
     baseBoostGHz: "4.5/5.7",
@@ -84,7 +84,7 @@ midCPU:
 },
 {
     procName: "Ryzen 7 7700X",
-    id: 5,
+    id: 11,
     manufacturer: "AMD",
     coresThreads: "8/16",
     baseBoostGHz: "4.5/5.4",
@@ -92,7 +92,7 @@ midCPU:
 },
 {
     procName: "Ryzen 5 7600X",
-    id: 6,
+    id: 12,
     manufacturer: "AMD",
     
     coresThreads: "6/12",
@@ -103,7 +103,7 @@ midCPU:
 lowEndCPU:
 [{
     procName: "Core i9 13900k",
-    id: 1,
+    id: 13,
     manufacturer: "Intel",
     coresThreads: "24/32(8+16)",
     baseBoostGHz: "3.0/5.8",
@@ -111,7 +111,7 @@ lowEndCPU:
 },
 {
     procName: "Core i7 13700k",
-    id: 2,
+    id: 14,
     manufacturer: "Intel",
     coresThreads: "16/24(8+8)",
     baseBoostGHz: "3.4/5.4",
@@ -119,7 +119,7 @@ lowEndCPU:
 },
 {
     procName: "Core i5 13600k",
-    id: 3,
+    id: 15,
     manufacturer: "Intel",
     coresThreads: "14/20(6+8)",
     baseBoostGHz: "3.5/5.1",
@@ -127,7 +127,7 @@ lowEndCPU:
 },
 {
     procName: "Ryzen 9 7950X",
-    id: 4,
+    id: 16,
     manufacturer: "AMD",
     coresThreads: "16/32",
     baseBoostGHz: "4.5/5.7",
@@ -135,7 +135,7 @@ lowEndCPU:
 },
 {
     procName: "Ryzen 7 7700X",
-    id: 5,
+    id: 17,
     manufacturer: "AMD",
     coresThreads: "8/16",
     baseBoostGHz: "4.5/5.4",
@@ -143,7 +143,7 @@ lowEndCPU:
 },
 {
     procName: "Ryzen 5 7600X",
-    id: 6,
+    id: 18,
     manufacturer: "AMD",
     
     coresThreads: "6/12",
@@ -153,3 +153,20 @@ lowEndCPU:
 ]
 
 };
+
+function generateTableRows(processorsArray, tableId) {
+    const table = document.getElementById(tableId);
+    processorsArray.forEach(processor => {
+        const row = table.insertRow();
+        row.insertCell().textContent = processor.manufacturer;
+        row.insertCell().textContent = processor.procName;
+        row.insertCell().textContent = processor.coresThreads;
+        row.insertCell().textContent = processor.baseBoostGHz;
+        row.insertCell().textContent = `${processor.price} ${processor.currencySign}`;
+    });
+}
+document.addEventListener('DOMContentLoaded', function() {
+generateTableRows(processors.highEndCPU, 'highEndCpuTable');
+generateTableRows(processors.midCPU, 'midCpuTable');
+generateTableRows(processors.lowEndCPU, 'lowEndCpuTable');
+});
