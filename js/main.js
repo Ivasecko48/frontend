@@ -3,7 +3,7 @@ const processors ={
         procName: "Core i9 13900k",
         id: 1,
         manufacturer: "Intel",
-        coresThreads: "24/32(8+16)",
+        coresThreads: "24/32",
         baseBoostGHz: "3.0/5.8",
         price: 579, currencySign:"€", currencyCode: "EUR"
     },
@@ -11,7 +11,7 @@ const processors ={
         procName: "Core i7 13700k",
         id: 2,
         manufacturer: "Intel",
-        coresThreads: "16/24(8+8)",
+        coresThreads: "16/24",
         baseBoostGHz: "3.4/5.4",
         price: 399, currencySign:"€", currencyCode: "EUR"
     },
@@ -19,7 +19,7 @@ const processors ={
         procName: "Core i5 13600k",
         id: 3,
         manufacturer: "Intel",
-        coresThreads: "14/20(6+8)",
+        coresThreads: "14/20",
         baseBoostGHz: "3.5/5.1",
         price: 299, currencySign:"€", currencyCode: "EUR"
     },
@@ -54,7 +54,7 @@ midCPU:
     procName: "Core i9 13900k",
     id: 7,
     manufacturer: "Intel",
-    coresThreads: "24/32(8+16)",
+    coresThreads: "24/32",
     baseBoostGHz: "3.0/5.8",
     price: 579, currencySign:"€", currencyCode: "EUR"
 },
@@ -62,7 +62,7 @@ midCPU:
     procName: "Core i7 13700k",
     id: 8,
     manufacturer: "Intel",
-    coresThreads: "16/24(8+8)",
+    coresThreads: "16/24",
     baseBoostGHz: "3.4/5.4",
     price: 399, currencySign:"€", currencyCode: "EUR"
 },
@@ -70,7 +70,7 @@ midCPU:
     procName: "Core i5 13600k",
     id: 9,
     manufacturer: "Intel",
-    coresThreads: "14/20(6+8)",
+    coresThreads: "14/20",
     baseBoostGHz: "3.5/5.1",
     price: 299, currencySign:"€", currencyCode: "EUR"
 },
@@ -105,7 +105,7 @@ lowEndCPU:
     procName: "Core i9 13900k",
     id: 13,
     manufacturer: "Intel",
-    coresThreads: "24/32(8+16)",
+    coresThreads: "24/32",
     baseBoostGHz: "3.0/5.8",
     price: 579, currencySign:"€", currencyCode: "EUR"
 },
@@ -113,7 +113,7 @@ lowEndCPU:
     procName: "Core i7 13700k",
     id: 14,
     manufacturer: "Intel",
-    coresThreads: "16/24(8+8)",
+    coresThreads: "16/24",
     baseBoostGHz: "3.4/5.4",
     price: 399, currencySign:"€", currencyCode: "EUR"
 },
@@ -121,7 +121,7 @@ lowEndCPU:
     procName: "Core i5 13600k",
     id: 15,
     manufacturer: "Intel",
-    coresThreads: "14/20(6+8)",
+    coresThreads: "14/20",
     baseBoostGHz: "3.5/5.1",
     price: 299, currencySign:"€", currencyCode: "EUR"
 },
@@ -203,5 +203,5 @@ document.addEventListener('DOMContentLoaded',()=>{
     const mobileMenu=document.querySelector('.mobile-menu');
 
 hamburgerButton.addEventListener('click',()=>
-mobileMenu.classList.toggle('active'));
+mobileMenu.classList.toggle(active));
 })

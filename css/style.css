@@ -136,7 +136,7 @@ header .container{
 }
 .card {
 flex:1;
-margin: 10px 14px;
+margin: 28px 18px;
 padding: 20px 18px;
 border: 2px solid transparent;
 text-align: center;
@@ -164,6 +164,12 @@ background-color: rgba(235, 229, 229, 0.445);
 }
 
    /* tablice */
+   #table .container h1{
+      font-size:3rem;
+   }
+   #table .container h2{
+      text-decoration: underline;
+   }
 
 .table .container{
    display:flex;
@@ -171,7 +177,7 @@ background-color: rgba(235, 229, 229, 0.445);
 }
 .table table{
    border-collapse: collapse;
-   width: 30% ;
+   width: 50% ;
    margin: 10px;
 }
 .table th,td{
@@ -227,7 +233,7 @@ footer p{
 }
   /* Utility */
   .container{
-   max-width: 1240px;
+   max-width: 1380px;
    margin: 0 auto;
    padding: 0 15px;
 
@@ -309,7 +315,7 @@ footer p{
    display:block;
 }
 .color-box{line-height: 0.3;}
-}
+
 .boxes .container {
    display: block;
    text-align: center; 
@@ -331,4 +337,5 @@ footer p{
 .table table {
    width: 100%;
    margin: 10px 0;
+}
 }
