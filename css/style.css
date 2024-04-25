@@ -307,6 +307,28 @@ footer p{
 .navbar .main-menu {display:none;}
 .navbar .hamburger-button{
    display:block;
-   
 }
+.color-box{line-height: 0.3;}
+}
+.boxes .container {
+   display: block;
+   text-align: center; 
+}
+
+.boxes .container img {
+   max-width: 100%;
+   max-height: auto;
+}
+
+.container .container-compact img {
+   margin: 20px auto;
+}
+
+.table .container {
+   flex-direction: column;
+}
+
+.table table {
+   width: 100%;
+   margin: 10px 0;
 }
