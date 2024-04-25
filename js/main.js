@@ -196,3 +196,12 @@ mergeRowsByColumn('highEndCpuTable', 0);
 mergeRowsByColumn('midCpuTable', 0);
 mergeRowsByColumn('lowEndCpuTable', 0);
 });
+
+//mobile menu
+document.addEventListener('DOMContentLoaded',()=>{
+    const hamburgerButton= document.querySelector('.hamburger-button');
+    const mobileMenu=document.querySelector('.mobile-menu');
+
+hamburgerButton.addEventListener('click',()=>
+mobileMenu.classList.toggle('active'));
+})
