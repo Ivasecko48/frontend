@@ -349,6 +349,17 @@ function generateTableRows(processorsArray, tableId) {
     });
 }
 
+function generateGPUTableRows(graphicsCards, tableId){
+    const table=document.getElementById(tableId);
+    graphicsCards.forEach(gpu =>{
+        const row=table.insertRow();
+        row.insertCell().textContent = gpu.modelName;
+        row.insertCell().textContent = gpu.memory;
+        row.insertCell().textContent = gpu.TDP;
+        row.insertCell().textContent = `${gpu.currencySign}${gpu.price}`;
+    })
+}
+
 function mergeRowsByColumn(tableId, columnIndex) {
     const table = document.getElementById(tableId);
     const rows = table.rows;
@@ -429,12 +440,13 @@ document.addEventListener('DOMContentLoaded', function() {
         showCompatibleMotherboards(selectedProcessor);
     });
 
-    // Generirajte tablice za visokoprocijenjene, srednje i niskoprocijenjene CPU-ove
+    // Generiranje tablica za visokoprocijenjene, srednje i niskoprocijenjene CPU-ove te graficke kartice
     generateTableRows(processors.highEndCPU, 'highEndCpuTable');
     generateTableRows(processors.midCPU, 'midCpuTable');
     generateTableRows(processors.lowEndCPU, 'lowEndCpuTable');
-
-    // Spojite retke tablice prema proizvođaču
+    generateGPUTableRows(grafickeKartice.NVIDIA, 'nvidiaGPU');
+    generateGPUTableRows(grafickeKartice.AMD, 'amdGPU');
+//spajanje redaka za cpu
     mergeRowsByColumn('highEndCpuTable', 0);
     mergeRowsByColumn('midCpuTable', 0);
     mergeRowsByColumn('lowEndCpuTable', 0);
