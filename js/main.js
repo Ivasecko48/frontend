@@ -9,7 +9,7 @@ const processors = {
             price: 579,
             currencySign: "€",
             currencyCode: "EUR",
-            socket: "LGA 1700"
+            socket: "LGA1700"
         },
         {
             procName: "Core i7 13700k",
@@ -182,20 +182,22 @@ const processors = {
         }
     ]
 };
+const allProcessors = [...processors.highEndCPU, ...processors.midCPU, ...processors.lowEndCPU];
 const motherboards = [
     {
         name: "ASUS ROG Strix Z690-E Gaming",
+        id:17,
         socket: "LGA1700",
         price: 2
         // Ostale informacije o matičnoj ploči...
-    },
+    }
     // Ostale matične ploče...
 ];
 const grafickeKartice = {
     NVIDIA: [
         {
             modelName: "RTX 4090",
-            id: 2,
+            id: 19,
             manufacturer: "NVIDIA",
             memory: "24 GB GDDR6X",
             price: 1599,
@@ -215,7 +217,7 @@ const grafickeKartice = {
         },
         {
             modelName: "RTX 4060",
-            id: 1,
+            id: 20,
             manufacturer: "NVIDIA",
             memory: "12 GB GDDR6",
             price: 499,
@@ -225,7 +227,7 @@ const grafickeKartice = {
         },
         {
             modelName: "RTX 3080",
-            id: 19,
+            id: 21,
             manufacturer: "NVIDIA",
             memory: "10 GB GDDR6X",
             price: 569,
@@ -235,7 +237,7 @@ const grafickeKartice = {
         },
         {
             modelName: "RTX 3070",
-            id: 20,
+            id: 22,
             manufacturer: "NVIDIA",
             memory: "8 GB GDDR6",
             price: 499,
@@ -245,7 +247,7 @@ const grafickeKartice = {
         },
         {
             modelName: "RTX 3060 Ti",
-            id: 21,
+            id: 23,
             manufacturer: "NVIDIA",
             memory: "8 GB GDDR6",
             price: 399,
@@ -255,7 +257,7 @@ const grafickeKartice = {
         },
         {
             modelName: "RTX 3050",
-            id: 22,
+            id: 24,
             manufacturer: "NVIDIA",
             memory: "4 GB GDDR6",
             price: 249,
@@ -267,7 +269,7 @@ const grafickeKartice = {
     AMD: [
         {
             modelName: "RX 7800 XT",
-            id: 3,
+            id: 25,
             manufacturer: "AMD",
             memory: "16 GB GDDR6",
             price: 499,
@@ -277,7 +279,7 @@ const grafickeKartice = {
         },
         {
             modelName: "RX 7600",
-            id: 4,
+            id: 26,
             manufacturer: "AMD",
             memory: "12 GB GDDR6",
             price: 349,
@@ -287,7 +289,7 @@ const grafickeKartice = {
         },
         {
             modelName: "RX 6900 XT",
-            id: 25,
+            id: 27,
             manufacturer: "AMD",
             memory: "16 GB GDDR6",
             price: 699,
@@ -297,7 +299,7 @@ const grafickeKartice = {
         },
         {
             modelName: "RX 6800 XT",
-            id: 26,
+            id: 28,
             manufacturer: "AMD",
             memory: "16 GB GDDR6",
             price: 649,
@@ -307,7 +309,7 @@ const grafickeKartice = {
         },
         {
             modelName: "RX 6700 XT",
-            id: 27,
+            id: 29,
             manufacturer: "AMD",
             memory: "12 GB GDDR6",
             price: 479,
@@ -317,7 +319,7 @@ const grafickeKartice = {
         },
         {
             modelName: "RX 6600 XT",
-            id: 28,
+            id: 30,
             manufacturer: "AMD",
             memory: "8 GB GDDR6",
             price: 379,
@@ -327,7 +329,7 @@ const grafickeKartice = {
         },
         {
             modelName: "RX 6500 XT",
-            id: 29,
+            id: 31,
             manufacturer: "AMD",
             memory: "4 GB GDDR6",
             price: 199,
@@ -337,6 +339,7 @@ const grafickeKartice = {
         }
     ]
 };
+const allGPUs = [...grafickeKartice.NVIDIA, ...grafickeKartice.AMD];
 function generateTableRows(processorsArray, tableId) {
     const table = document.getElementById(tableId);
     processorsArray.forEach(processor => {
@@ -384,23 +387,23 @@ function mergeRowsByColumn(tableId, columnIndex) {
 
 function showCompatibleMotherboards(selectedProcessor) {
     const selectedProcessorSocket = selectedProcessor.socket;
-    const compatibleMotherboards = motherboards.filter(motherboard => motherboard.socket === selectedProcessorSocket);
+    const compatibleMotherboards = motherboards.filter(motherboards => motherboards.socket === selectedProcessorSocket);
 
     // Ovdje možete prikazati popis kompatibilnih matičnih ploča na stranici ili ih koristiti na drugi način.
     console.log(compatibleMotherboards);
 }
-
+function findProcessorById(id) {
+    for (let processor of allProcessors) {
+      if (processor.id === id) {
+        return processor;
+      }
+    }
+    return null;
+  }
 
 document.addEventListener('DOMContentLoaded', function() {
-       // Inicijaliziramo prazan niz koji će sadržavati sve procesore
-       let allProcessors = [];
-
-       // Iteriramo kroz svaku kategoriju procesora i dodajemo ih u niz allProcessors
-       Object.values(processors).forEach(category => {
-           allProcessors = allProcessors.concat(category);
-       });
    
-       // Sortiramo sve procesore po proizvođaču i nazivu
+      
        allProcessors.sort((a, b) => {
            // Prvo sortiramo po proizvođaču
            const manufacturerComparison = a.manufacturer.localeCompare(b.manufacturer);
@@ -410,7 +413,8 @@ document.addEventListener('DOMContentLoaded', function() {
            // Ako su proizvođači isti, sortiramo po nazivu procesora
            return a.procName.localeCompare(b.procName);
        });
-   
+      
+       
        // Dobijamo referencu na select element za procesore
        const processorSelect = document.getElementById('processor');
    
@@ -433,12 +437,40 @@ document.addEventListener('DOMContentLoaded', function() {
            option.textContent = processor.procName;
            processorSelect.lastChild.appendChild(option);
        });
-   
+
+
+        allGPUs.sort((c,d)=>{
+          manufacturerComparison = c.manufacturer.localeCompare(d.manufacturer);
+             if (manufacturerComparison !== 0) {
+                 return manufacturerComparison;
+             }
+             // Ako su proizvođači isti, sortiramo po nazivu 
+             return c.modelName.localeCompare(d.modelName);
+         });
+      const gpuSelect = document.getElementById('gpu');
+      let currentManu= null;
+      allGPUs.forEach(gpu => {
+          if (gpu.manufacturer !== currentManu) {
+              const optgroup = document.createElement('optgroup');
+              optgroup.label = gpu.manufacturer;
+              gpuSelect.appendChild(optgroup);
+              currentManu = gpu.manufacturer;
+          }
+          const option = document.createElement('option');
+                 option.value = gpu.id;
+                 option.textContent = gpu.modelName;
+                 gpuSelect.lastChild.appendChild(option);
+        
+      });
+    
+
        processorSelect.addEventListener('change', function() {
         const selectedProcessorId = parseInt(this.value);
+        console.log("Selected processor ID:", selectedProcessorId); // Check the value of selectedProcessorId
         const selectedProcessor = findProcessorById(selectedProcessorId);
+        console.log("Selected processor:", selectedProcessor); // Check the value of selectedProcessor
         showCompatibleMotherboards(selectedProcessor);
-    });
+      });
 
     // Generiranje tablica za visokoprocijenjene, srednje i niskoprocijenjene CPU-ove te graficke kartice
     generateTableRows(processors.highEndCPU, 'highEndCpuTable');
