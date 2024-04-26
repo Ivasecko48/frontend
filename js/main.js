@@ -153,7 +153,14 @@ lowEndCPU:
 ]
 
 };
-
+const motherboards = [
+    {
+        name: "ASUS ROG Strix Z690-E Gaming",
+        socket: "LGA1700",
+        // Ostale informacije o matičnoj ploči...
+    },
+    // Ostale matične ploče...
+];
 function generateTableRows(processorsArray, tableId) {
     const table = document.getElementById(tableId);
     processorsArray.forEach(processor => {
@@ -188,14 +195,76 @@ function mergeRowsByColumn(tableId, columnIndex) {
     
 }
 
+function showCompatibleMotherboards(selectedProcessor) {
+    const selectedProcessorSocket = selectedProcessor.socket;
+    const compatibleMotherboards = motherboards.filter(motherboard => motherboard.socket === selectedProcessorSocket);
+
+    // Ovdje možete prikazati popis kompatibilnih matičnih ploča na stranici ili ih koristiti na drugi način.
+    console.log(compatibleMotherboards);
+}
+
+
 document.addEventListener('DOMContentLoaded', function() {
-generateTableRows(processors.highEndCPU, 'highEndCpuTable');
-generateTableRows(processors.midCPU, 'midCpuTable');
-generateTableRows(processors.lowEndCPU, 'lowEndCpuTable');
-mergeRowsByColumn('highEndCpuTable', 0);
-mergeRowsByColumn('midCpuTable', 0);
-mergeRowsByColumn('lowEndCpuTable', 0);
+       // Inicijaliziramo prazan niz koji će sadržavati sve procesore
+       let allProcessors = [];
+
+       // Iteriramo kroz svaku kategoriju procesora i dodajemo ih u niz allProcessors
+       Object.values(processors).forEach(category => {
+           allProcessors = allProcessors.concat(category);
+       });
+   
+       // Sortiramo sve procesore po proizvođaču i nazivu
+       allProcessors.sort((a, b) => {
+           // Prvo sortiramo po proizvođaču
+           const manufacturerComparison = a.manufacturer.localeCompare(b.manufacturer);
+           if (manufacturerComparison !== 0) {
+               return manufacturerComparison;
+           }
+           // Ako su proizvođači isti, sortiramo po nazivu procesora
+           return a.procName.localeCompare(b.procName);
+       });
+   
+       // Dobijamo referencu na select element za procesore
+       const processorSelect = document.getElementById('processor');
+   
+       // Inicijaliziramo varijablu za trenutnog proizvođača
+       let currentManufacturer = null;
+   
+       // Iteriramo kroz sve procesore i dodajemo ih u select element, s odgovarajućim optgrupama
+       allProcessors.forEach(processor => {
+           // Ako je trenutni proizvođač različit od proizvođača procesora, stvaramo novu optgrupu
+           if (processor.manufacturer !== currentManufacturer) {
+               const optgroup = document.createElement('optgroup');
+               optgroup.label = processor.manufacturer;
+               processorSelect.appendChild(optgroup);
+               currentManufacturer = processor.manufacturer;
+           }
+   
+           // Stvaramo novi option element i dodajemo ga u odgovarajuću optgrupu
+           const option = document.createElement('option');
+           option.value = processor.id;
+           option.textContent = processor.procName;
+           processorSelect.lastChild.appendChild(option);
+       });
+   
+       processorSelect.addEventListener('change', function() {
+        const selectedProcessorId = parseInt(this.value);
+        const selectedProcessor = findProcessorById(selectedProcessorId);
+        showCompatibleMotherboards(selectedProcessor);
+    });
+
+    // Generirajte tablice za visokoprocijenjene, srednje i niskoprocijenjene CPU-ove
+    generateTableRows(processors.highEndCPU, 'highEndCpuTable');
+    generateTableRows(processors.midCPU, 'midCpuTable');
+    generateTableRows(processors.lowEndCPU, 'lowEndCpuTable');
+
+    // Spojite retke tablice prema proizvođaču
+    mergeRowsByColumn('highEndCpuTable', 0);
+    mergeRowsByColumn('midCpuTable', 0);
+    mergeRowsByColumn('lowEndCpuTable', 0);
 });
+
+
 
 //mobile menu
 document.addEventListener('DOMContentLoaded',()=>{
@@ -203,5 +272,6 @@ document.addEventListener('DOMContentLoaded',()=>{
     const mobileMenu=document.querySelector('.mobile-menu');
 
 hamburgerButton.addEventListener('click',()=>
-mobileMenu.classList.toggle(active));
+mobileMenu.classList.toggle('active'));
 })
+
