@@ -131,6 +131,12 @@ header .container{
    max-width: 400px;
    max-height: 400px;
 }
+.boxes .container h3{
+text-align: center;
+margin-top:6px;
+font-size: 1.4rem;
+padding-top: 18px;
+}
 .container .container-compact img{
    margin: 0px 20px;
 }
@@ -343,7 +349,8 @@ footer p{
 }
 }
 @media (max-width: 1200px) {
-   .boxes .container{
+   .card{
+      flex:1;
     flex-direction:column;
    }
   .container-perf{
@@ -364,7 +371,14 @@ footer p{
     }
  }
  @media (max-width: 1720px) {
-
+   .boxes .container {
+      flex-direction: column;
+    }
+    .boxes .container .text{
+      margin-top: 10px;
+    margin-bottom: -20px;
+    text-decoration: underline;
+    }
     .table .container {
        flex-direction: column;
     }
