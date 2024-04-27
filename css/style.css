@@ -137,6 +137,15 @@ margin-top:6px;
 font-size: 1.4rem;
 padding-top: 15px;
 }
+
+.disclaimer {
+   text-align: right;
+   margin: auto 30px;
+ }
+ .disclaimer-text {
+   color: #888; /* Blijedo siva boja */
+   font-size: 0.8rem; /* Manji font */
+ }
 .container .container-compact img{
    margin: 0px 20px;
 }
