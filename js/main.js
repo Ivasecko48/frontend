@@ -768,7 +768,7 @@ document.addEventListener('DOMContentLoaded', function() {
     mergeRowsByColumn('highEndCpuTable', 0);
     mergeRowsByColumn('midCpuTable', 0);
     mergeRowsByColumn('lowEndCpuTable', 0);
-
+});
 
 //mobile menu
 document.addEventListener('DOMContentLoaded',()=>{
@@ -777,6 +777,5 @@ document.addEventListener('DOMContentLoaded',()=>{
 
 hamburgerButton.addEventListener('click',()=>
 mobileMenu.classList.toggle('active'));
-})
-
 });
+
