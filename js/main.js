@@ -622,14 +622,37 @@ function mergeRowsByColumn(tableId, columnIndex) {
 //     // Ovdje možete prikazati popis kompatibilnih matičnih ploča na stranici ili ih koristiti na drugi način.
 //     console.log(compatibleMotherboards);
 // }
-// function findProcessorById(id) {
-//     for (let processor of allProcessors) {
-//       if (processor.id === id) {
-//         return processor;
-//       }
-//     }
-//     return null;
-//   }
+function findProcessorById(id) {
+    for (let processor of allProcessors) {
+      if (processor.id === id) {
+        return processor;
+      }
+    }
+    return null;
+  }
+  function calculateTotalPrice() {
+    // Dohvaćamo odabrane vrijednosti za svaki odabir
+    const selectedProcessorId = parseInt(document.getElementById('processor').value);
+    const selectedGpuId = parseInt(document.getElementById('gpu').value);
+    const selectedMotherboardId = parseInt(document.getElementById('motherboard').value);
+    const selectedRamId = parseInt(document.getElementById('ram').value);
+    const selectedPsuId = parseInt(document.getElementById('psu').value);
+    const selectedCaseId = parseInt(document.getElementById('case').value);
+
+    // Pronalazimo odabrane opcije iz svakog odabira
+    const selectedProcessor = findProcessorById(selectedProcessorId);
+    const selectedGpu = allGPUs.find(gpu => gpu.id === selectedGpuId);
+    const selectedMotherboard = motherboards.find(motherboard => motherboard.id === selectedMotherboardId);
+    const selectedRam = ramMemory.find(ram => ram.id === selectedRamId);
+    const selectedPsu = powerSupplies.find(psu => psu.id === selectedPsuId);
+    const selectedCase = cases.find(PCcase => PCcase.id === selectedCaseId);
+
+    // Sumiramo cijene odabranih opcija
+    const totalPrice = selectedProcessor.price + selectedGpu.price + selectedMotherboard.price +
+                       selectedRam.price + selectedPsu.price + selectedCase.price;
+
+    return totalPrice;
+}
 
 document.addEventListener('DOMContentLoaded', function() {
    
