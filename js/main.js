@@ -182,17 +182,66 @@ const processors = {
         }
     ]
 };
-const allProcessors = [...processors.highEndCPU, ...processors.midCPU, ...processors.lowEndCPU];
-const motherboards = [
-    {
-        name: "ASUS ROG Strix Z690-E Gaming",
-        id:17,
-        socket: "LGA1700",
-        price: 2
-        // Ostale informacije o matičnoj ploči...
-    }
-    // Ostale matične ploče...
-];
+    const allProcessors = [...processors.highEndCPU, ...processors.midCPU, ...processors.lowEndCPU];
+
+    const motherboards = [
+        {
+            name: "ASUS ROG Strix Z690-E Gaming",
+            id:101,
+            socket: "LGA1700",
+            price: 389.99,
+            currencySign: "€",
+            currencyCode: "EUR"
+        },
+        {
+            name: "GIGABYTE Z690 AORUS Master",
+            id:102,
+            socket: "LGA1700",
+            price: 359.99,
+            currencySign: "€",
+            currencyCode: "EUR"
+        },
+        {
+            name: "MSI MEG Z690 GODLIKE",
+            id:103,
+            socket: "LGA1700",
+            price: 899.99,
+            currencySign: "€",
+            currencyCode: "EUR"
+        },
+        {
+            name: "ASRock Z690 Taichi",
+            id:104,
+            socket: "LGA1700",
+            price: 329.99,
+            currencySign: "€",
+            currencyCode: "EUR"
+        },
+        {
+            name: "ASUS ROG Strix B550-F Gaming",
+            id:105,
+            socket: "AM4",
+            price: 159.99,
+            currencySign: "€",
+            currencyCode: "EUR"
+        },
+        {
+            name: "MSI MAG B550 TOMAHAWK",
+            id:106,
+            socket: "AM4",
+            price: 179.99,
+            currencySign: "€",
+            currencyCode: "EUR"
+        },
+        {
+            name: "GIGABYTE B550 AORUS PRO",
+            id:107,
+            socket: "AM4",
+            price: 189.99,
+            currencySign: "€",
+            currencyCode: "EUR"
+        }
+    ];
 const grafickeKartice = {
     NVIDIA: [
         {
@@ -340,6 +389,187 @@ const grafickeKartice = {
     ]
 };
 const allGPUs = [...grafickeKartice.NVIDIA, ...grafickeKartice.AMD];
+
+const ramMemory = [
+    {
+        name: "Corsair Vengeance LPX 16GB (2x8GB) DDR4-3200",
+        id:30,
+        price: 89.99,
+        currencySign: "€",
+        currencyCode: "EUR",
+        capacity: "16GB (2x8GB)",
+        speed: "DDR4-3200"
+    },
+    {
+        name: "G.Skill Ripjaws V 32GB (2x16GB) DDR4-3600",
+        id:31,
+        price: 149.99,
+        currencySign: "€",
+        currencyCode: "EUR",
+        capacity: "32GB (2x16GB)",
+        speed: "DDR4-3600"
+    },
+    {
+        name: "Crucial Ballistix 32GB (2x16GB) DDR4-3200",
+        id:32,
+        price: 139.99,
+        currencySign: "€",
+        currencyCode: "EUR",
+        capacity: "32GB (2x16GB)",
+        speed: "DDR4-3200"
+    },
+    {
+        name: "Team T-FORCE DARK Z 16GB (2x8GB) DDR4-3600",
+        id:33,
+        price: 99.99,
+        currencySign: "€",
+        currencyCode: "EUR",
+        capacity: "16GB (2x8GB)",
+        speed: "DDR4-3600"
+    },
+    {
+        name: "Kingston HyperX Fury RGB 64GB (2x32GB) DDR4-3200",
+        id:34,
+        price: 299.99,
+        currencySign: "€",
+        currencyCode: "EUR",
+        capacity: "64GB (2x32GB)",
+        speed: "DDR4-3200"
+    },
+    {
+        name: "Corsair Dominator Platinum RGB 32GB (2x16GB) DDR4-3600",
+        id:35,
+        price: 249.99,
+        currencySign: "€",
+        currencyCode: "EUR",
+        capacity: "32GB (2x16GB)",
+        speed: "DDR4-3600"
+    },
+    {
+        name: "Corsair Vengeance LPX 8GB (1x8GB) DDR4-2666",
+        id:36,
+        price: 49.99,
+        currencySign: "€",
+        currencyCode: "EUR",
+        capacity: "8GB (1x8GB)",
+        speed: "DDR4-2666"
+    },
+    {
+        name: "G.Skill Aegis 8GB (2x4GB) DDR4-3000",
+        id:37,
+        price: 39.99,
+        currencySign: "€",
+        currencyCode: "EUR",
+        capacity: "8GB (2x4GB)",
+        speed: "DDR4-3000"
+    },
+    {
+        name: "Crucial Ballistix 16GB (2x8GB) DDR4-2400",
+        id:38,
+        price: 79.99,
+        currencySign: "€",
+        currencyCode: "EUR",
+        capacity: "16GB (2x8GB)",
+        speed: "DDR4-2400"
+    }
+];
+const powerSupplies = [
+    {
+        name: "Corsair RM750x",
+        id:39,
+        price: 129.99,
+        currencySign: "€",
+        currencyCode: "EUR",
+        wattage: 750
+    },
+    {
+        name: "Seasonic Focus GX-650",
+        id:40,
+        price: 119.99,
+        currencySign: "€",
+        currencyCode: "EUR",
+        wattage: 650
+    },
+    {
+        name: "EVGA SuperNOVA 750 G5",
+        id:41,
+        price: 139.99,
+        currencySign: "€",
+        currencyCode: "EUR",
+        wattage: 750
+    },
+    {
+        name: "be quiet! Straight Power 11 650W",
+        id:42,
+        price: 124.99,
+        currencySign: "€",
+        currencyCode: "EUR",
+        wattage: 650
+    },
+    {
+        name: "Thermaltake Toughpower GF1 750W",
+        id:43,
+        price: 149.99,
+        currencySign: "€",
+        currencyCode: "EUR",
+        wattage: 750
+    },
+    {
+        name: "Corsair RM550x",
+        id:44,
+        price: 109.99,
+        currencySign: "€",
+        currencyCode: "EUR",
+        wattage: 550
+    },
+    {
+        name: "EVGA SuperNOVA 850 G5",
+        id:45,
+        price: 159.99,
+        currencySign: "€",
+        currencyCode: "EUR",
+        wattage: 850
+    }
+];
+
+const cases = [
+    {
+        name: "NZXT H510",
+        id:46,
+        price: 79.99,
+        currencySign: "€",
+        currencyCode: "EUR"
+    },
+    {
+        name: "Corsair iCUE 220T RGB",
+        id:47,
+        price: 89.99,
+        currencySign: "€",
+        currencyCode: "EUR"
+    },
+    {
+        name: "Fractal Design Meshify C",
+        id:48,
+        price: 99.99,
+        currencySign: "€",
+        currencyCode: "EUR"
+    },
+    {
+        name: "Phanteks Eclipse P400A",
+        id:49,
+        price: 89.99,
+        currencySign: "€",
+        currencyCode: "EUR"
+    },
+    {
+        name: "Cooler Master MasterBox Q300L",
+        id:50,
+        price: 49.99,
+        currencySign: "€",
+        currencyCode: "EUR"
+    }
+];
+
 function generateTableRows(processorsArray, tableId) {
     const table = document.getElementById(tableId);
     processorsArray.forEach(processor => {
@@ -385,21 +615,21 @@ function mergeRowsByColumn(tableId, columnIndex) {
     
 }
 
-function showCompatibleMotherboards(selectedProcessor) {
-    const selectedProcessorSocket = selectedProcessor.socket;
-    const compatibleMotherboards = motherboards.filter(motherboards => motherboards.socket === selectedProcessorSocket);
+// function showCompatibleMotherboards(selectedProcessor) {
+//     const selectedProcessorSocket = selectedProcessor.socket;
+//     const compatibleMotherboards = motherboards.filter(motherboards => motherboards.socket === selectedProcessorSocket);
 
-    // Ovdje možete prikazati popis kompatibilnih matičnih ploča na stranici ili ih koristiti na drugi način.
-    console.log(compatibleMotherboards);
-}
-function findProcessorById(id) {
-    for (let processor of allProcessors) {
-      if (processor.id === id) {
-        return processor;
-      }
-    }
-    return null;
-  }
+//     // Ovdje možete prikazati popis kompatibilnih matičnih ploča na stranici ili ih koristiti na drugi način.
+//     console.log(compatibleMotherboards);
+// }
+// function findProcessorById(id) {
+//     for (let processor of allProcessors) {
+//       if (processor.id === id) {
+//         return processor;
+//       }
+//     }
+//     return null;
+//   }
 
 document.addEventListener('DOMContentLoaded', function() {
    
@@ -438,7 +668,6 @@ document.addEventListener('DOMContentLoaded', function() {
            processorSelect.lastChild.appendChild(option);
        });
 
-
         allGPUs.sort((c,d)=>{
           manufacturerComparison = c.manufacturer.localeCompare(d.manufacturer);
              if (manufacturerComparison !== 0) {
@@ -462,15 +691,49 @@ document.addEventListener('DOMContentLoaded', function() {
                  gpuSelect.lastChild.appendChild(option);
         
       });
+      const MOBOSelect = document.getElementById('motherboard');
+      let currentSocket= null;
+      motherboards.forEach(motherboard => {
+          if (motherboard.socket !== currentSocket) {
+              const optgroup = document.createElement('optgroup');
+              optgroup.label = motherboard.socket;
+              MOBOSelect.appendChild(optgroup);
+              currentSocket = motherboard.socket;
+          }
+          const option = document.createElement('option');
+                 option.value = motherboard.id;
+                 option.textContent = motherboard.name;
+                 MOBOSelect.lastChild.appendChild(option);
+      });
+      const memorySelect = document.getElementById('ram');
+      ramMemory.forEach(ram => {
+          const option = document.createElement('option');
+                 option.value = ram.id;
+                 option.textContent = ram.name;
+                 memorySelect.appendChild(option);
+      });
+      const psuSelect = document.getElementById('psu');
+      powerSupplies.forEach(psu => {
+          const option = document.createElement('option');
+                 option.value = psu.id;
+                 option.textContent = psu.name;
+                 psuSelect.appendChild(option);
+      });
+      const caseSelect = document.getElementById('case');
+      cases.forEach(PCcase => {
+          const option = document.createElement('option');
+                 option.value = PCcase.id;
+                 option.textContent = PCcase.name;
+                 caseSelect.appendChild(option);
+      });
     
-
-       processorSelect.addEventListener('change', function() {
-        const selectedProcessorId = parseInt(this.value);
+      processorSelect.addEventListener('change', function() {
+       const selectedProcessorId = parseInt(this.value);
         console.log("Selected processor ID:", selectedProcessorId); // Check the value of selectedProcessorId
         const selectedProcessor = findProcessorById(selectedProcessorId);
         console.log("Selected processor:", selectedProcessor); // Check the value of selectedProcessor
         showCompatibleMotherboards(selectedProcessor);
-      });
+      }); 
 
     // Generiranje tablica za visokoprocijenjene, srednje i niskoprocijenjene CPU-ove te graficke kartice
     generateTableRows(processors.highEndCPU, 'highEndCpuTable');
@@ -482,8 +745,6 @@ document.addEventListener('DOMContentLoaded', function() {
     mergeRowsByColumn('highEndCpuTable', 0);
     mergeRowsByColumn('midCpuTable', 0);
     mergeRowsByColumn('lowEndCpuTable', 0);
-});
-
 
 
 //mobile menu
@@ -495,3 +756,4 @@ hamburgerButton.addEventListener('click',()=>
 mobileMenu.classList.toggle('active'));
 })
 
+});
