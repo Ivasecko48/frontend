@@ -650,9 +650,8 @@ function findProcessorById(id) {
     // Sumiramo cijene odabranih opcija
     const totalPrice = selectedProcessor.price + selectedGpu.price + selectedMotherboard.price +
                        selectedRam.price + selectedPsu.price + selectedCase.price;
-
     return totalPrice;
-}
+   }
 
 document.addEventListener('DOMContentLoaded', function() {
    
@@ -750,13 +749,13 @@ document.addEventListener('DOMContentLoaded', function() {
                  caseSelect.appendChild(option);
       });
     
-      processorSelect.addEventListener('change', function() {
-       const selectedProcessorId = parseInt(this.value);
-        console.log("Selected processor ID:", selectedProcessorId); // Check the value of selectedProcessorId
-        const selectedProcessor = findProcessorById(selectedProcessorId);
-        console.log("Selected processor:", selectedProcessor); // Check the value of selectedProcessor
-        showCompatibleMotherboards(selectedProcessor);
-      }); 
+    //   processorSelect.addEventListener('change', function() {
+    //    const selectedProcessorId = parseInt(this.value);
+    //     console.log("Selected processor ID:", selectedProcessorId); // Check the value of selectedProcessorId
+    //     const selectedProcessor = findProcessorById(selectedProcessorId);
+    //     console.log("Selected processor:", selectedProcessor); // Check the value of selectedProcessor
+    //     showCompatibleMotherboards(selectedProcessor);
+  
 
     // Generiranje tablica za visokoprocijenjene, srednje i niskoprocijenjene CPU-ove te graficke kartice
     generateTableRows(processors.highEndCPU, 'highEndCpuTable');
@@ -768,14 +767,22 @@ document.addEventListener('DOMContentLoaded', function() {
     mergeRowsByColumn('highEndCpuTable', 0);
     mergeRowsByColumn('midCpuTable', 0);
     mergeRowsByColumn('lowEndCpuTable', 0);
-});
+}); 
 
 //mobile menu
 document.addEventListener('DOMContentLoaded',()=>{
     const hamburgerButton= document.querySelector('.hamburger-button');
     const mobileMenu=document.querySelector('.mobile-menu');
-
 hamburgerButton.addEventListener('click',()=>
 mobileMenu.classList.toggle('active'));
 });
-
+document.addEventListener('DOMContentLoaded', function() {
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const price = calculateTotalPrice();
+    const priceDisplay = document.getElementById('price-display');
+    priceDisplay.textContent = `Cijena: €${price.toFixed(2)} `;
+    priceDisplay.classList.add('color-box');
+        priceDisplay.classList.add('visible'); 
+});
+});
